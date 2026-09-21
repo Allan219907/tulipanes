@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,14 +103,20 @@
         </button>
 
 
-        <audio id="musica" loop>
-            <source src="musica/cancion.mp3" type="audio/mpeg">
-        </audio>
+        <!-- Reproductor de YouTube -->
+        <div class="youtube-container">
+            <div id="youtube-player"></div>
+        </div>
 
     </section>
 
 
+    <!-- API OFICIAL DE YOUTUBE -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- NUESTRO JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
+
 </html>

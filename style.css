@@ -12,14 +12,14 @@ body {
 }
 
 
-/* PANTALLAS */
+/* =========================
+   PANTALLAS
+========================= */
 
 .pantalla {
     display: none;
-
     width: 100%;
     height: 100vh;
-
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -30,138 +30,108 @@ body {
 }
 
 
-/* PANTALLA INICIAL */
+/* =========================
+   PANTALLA INICIAL
+========================= */
 
 #inicio {
     background:
         radial-gradient(circle at center, #fffef8, #f3f0df);
 }
 
-
 #btnInicio,
 #btnMusica {
-
     border: none;
-
     padding: 16px 35px;
-
     border-radius: 50px;
-
     font-size: 18px;
-
     cursor: pointer;
-
     background: #f5cf45;
-
     color: #514414;
-
     box-shadow:
         0 8px 25px rgba(0,0,0,.12);
-
     transition: .3s;
 }
 
-
 #btnInicio:hover,
 #btnMusica:hover {
-
     transform: translateY(-3px);
-
     box-shadow:
         0 12px 30px rgba(0,0,0,.16);
 }
 
 
-/* SALUDO */
+/* =========================
+   SALUDO
+========================= */
 
 #saludo {
-
     position: absolute;
-
     top: 10%;
-
     font-size: 34px;
-
     font-weight: normal;
-
     color: #444;
-
     opacity: 0;
-
     animation:
         aparecer 1.5s ease forwards;
-
 }
 
 
-/* JARDÍN */
+/* =========================
+   JARDÍN
+========================= */
 
 .jardin {
-
     position: relative;
-
     width: 330px;
     height: 390px;
-
     margin-top: 70px;
-
 }
 
 
-/* TULIPAN */
+/* =========================
+   TULIPÁN
+========================= */
 
 .tulipan {
-
     position: absolute;
-
     bottom: 0;
-
     width: 100px;
     height: 330px;
-
 }
 
 
 /* POSICIONES */
 
 .tulipan-1 {
-
     left: 15px;
-
     transform:
         scale(.85)
         rotate(-7deg);
 }
 
-
 .tulipan-2 {
-
     left: 115px;
 }
 
-
 .tulipan-3 {
-
     right: 10px;
-
     transform:
         scale(.9)
         rotate(7deg);
 }
 
 
-/* TALLO */
+/* =========================
+   TALLO
+========================= */
 
 .tallo {
-
     position: absolute;
-
     bottom: 0;
     left: 48px;
-
     width: 7px;
     height: 220px;
-
     border-radius: 10px;
 
     background:
@@ -172,47 +142,41 @@ body {
         );
 
     transform-origin: bottom;
-
     transform: scaleY(0);
 
     animation:
         crecerTallo 1.8s ease forwards;
-
 }
 
 
-/* FLOR */
+/* =========================
+   FLOR
+========================= */
 
 .flor {
-
     position: absolute;
-
     left: 18px;
     bottom: 205px;
-
     width: 70px;
     height: 80px;
 
     opacity: 0;
-
     transform: scale(.2);
 
     animation:
         florecer 1.3s ease forwards;
 
     animation-delay: 1.6s;
-
 }
 
 
-/* PÉTALOS */
+/* =========================
+   PÉTALOS
+========================= */
 
 .petalo {
-
     position: absolute;
-
     bottom: 0;
-
     width: 45px;
     height: 65px;
 
@@ -222,24 +186,18 @@ body {
             #ffe76b,
             #f2bf22
         );
-
 }
 
-
 .petalo-centro {
-
     left: 13px;
 
     border-radius:
         50% 50% 40% 40%;
 
     z-index: 3;
-
 }
 
-
 .petalo-izq {
-
     left: 0;
 
     transform:
@@ -247,12 +205,9 @@ body {
 
     border-radius:
         70% 40% 60% 40%;
-
 }
 
-
 .petalo-der {
-
     right: 0;
 
     transform:
@@ -260,18 +215,16 @@ body {
 
     border-radius:
         40% 70% 40% 60%;
-
 }
 
 
-/* HOJAS */
+/* =========================
+   HOJAS
+========================= */
 
 .hoja {
-
     position: absolute;
-
     bottom: 70px;
-
     width: 45px;
     height: 120px;
 
@@ -287,12 +240,9 @@ body {
         aparecerHoja 1s ease forwards;
 
     animation-delay: 1.2s;
-
 }
 
-
 .hoja-izq {
-
     left: 20px;
 
     border-radius:
@@ -300,12 +250,9 @@ body {
 
     transform:
         rotate(-30deg);
-
 }
 
-
 .hoja-der {
-
     right: 5px;
 
     border-radius:
@@ -313,16 +260,15 @@ body {
 
     transform:
         rotate(30deg);
-
 }
 
 
-/* VERSÍCULO */
+/* =========================
+   VERSÍCULO
+========================= */
 
 #versiculo {
-
     text-align: center;
-
     color: #555;
 
     opacity: 0;
@@ -331,36 +277,26 @@ body {
         aparecer 1.5s ease forwards;
 
     animation-delay: 3.2s;
-
 }
-
 
 #versiculo p {
-
     font-size: 21px;
-
     margin-bottom: 7px;
-
 }
-
 
 #versiculo span {
-
     font-size: 15px;
-
     color: #888;
-
 }
 
 
-/* BOTÓN MÚSICA */
+/* =========================
+   BOTÓN MÚSICA
+========================= */
 
 #btnMusica {
-
     margin-top: 25px;
-
     padding: 11px 25px;
-
     font-size: 15px;
 
     opacity: 0;
@@ -369,11 +305,36 @@ body {
         aparecer 1.5s ease forwards;
 
     animation-delay: 4s;
-
 }
 
 
-/* ANIMACIONES */
+/* =========================
+   REPRODUCTOR DE YOUTUBE
+   OCULTO FUERA DE PANTALLA
+========================= */
+
+.youtube-container {
+    position: fixed;
+
+    width: 200px;
+    height: 200px;
+
+    left: -9999px;
+    top: -9999px;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#youtube-player {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
 
 @keyframes crecerTallo {
 
@@ -387,115 +348,87 @@ body {
 
 }
 
-
 @keyframes florecer {
 
     0% {
-
         opacity: 0;
 
         transform:
             scale(.2)
             translateY(30px);
-
     }
 
     70% {
-
         transform:
             scale(1.1)
             translateY(0);
-
     }
 
     100% {
-
         opacity: 1;
 
         transform:
             scale(1);
-
     }
 
 }
-
 
 @keyframes aparecerHoja {
 
     from {
-
         opacity: 0;
 
         transform:
             scale(.3);
-
     }
 
     to {
-
         opacity: 1;
-
     }
 
 }
-
 
 @keyframes aparecer {
 
     from {
-
         opacity: 0;
 
         transform:
             translateY(15px);
-
     }
 
     to {
-
         opacity: 1;
 
         transform:
             translateY(0);
-
     }
 
 }
 
 
-/* CELULAR */
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 600px) {
 
     #saludo {
-
         font-size: 29px;
-
         top: 8%;
-
     }
-
 
     .jardin {
-
         transform: scale(.9);
-
         margin-top: 55px;
-
     }
-
 
     #versiculo {
-
         padding: 0 25px;
-
     }
 
-
     #versiculo p {
-
         font-size: 19px;
-
     }
 
 }
