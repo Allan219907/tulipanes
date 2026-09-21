@@ -310,7 +310,6 @@ body {
 
 /* =========================
    REPRODUCTOR DE YOUTUBE
-   OCULTO FUERA DE PANTALLA
 ========================= */
 
 .youtube-container {
@@ -319,8 +318,12 @@ body {
     width: 200px;
     height: 200px;
 
-    left: -9999px;
-    top: -9999px;
+    left: 0;
+    bottom: 0;
+
+    /* Lo dejamos técnicamente visible,
+       pero detrás de la página */
+    z-index: -1;
 
     overflow: hidden;
     pointer-events: none;
