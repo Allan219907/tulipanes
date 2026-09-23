@@ -20,6 +20,7 @@ body {
 
 .pantalla {
     display: none;
+
     width: 100%;
     height: 100vh;
 
@@ -48,7 +49,8 @@ body {
 ========================= */
 
 #btnInicio,
-#btnConfeti {
+#btnConfeti,
+#btnMusica {
     border: none;
 
     padding: 16px 35px;
@@ -73,7 +75,8 @@ body {
 
 
 #btnInicio:hover,
-#btnConfeti:hover {
+#btnConfeti:hover,
+#btnMusica:hover {
     transform: translateY(-3px);
 
     box-shadow:
@@ -82,7 +85,8 @@ body {
 
 
 #btnInicio:active,
-#btnConfeti:active {
+#btnConfeti:active,
+#btnMusica:active {
     transform: scale(.96);
 }
 
@@ -137,7 +141,6 @@ body {
 
 
 /* Tulipán izquierdo */
-
 .tulipan-1 {
     left: 15px;
 
@@ -148,14 +151,12 @@ body {
 
 
 /* Tulipán central */
-
 .tulipan-2 {
     left: 115px;
 }
 
 
 /* Tulipán derecho */
-
 .tulipan-3 {
     right: 10px;
 
@@ -355,15 +356,18 @@ body {
 
 
 /* =========================
-   BOTÓN CONFETI
+   CONTENEDOR DE BOTONES
 ========================= */
 
-#btnConfeti {
+.botones {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
     margin-top: 25px;
-
-    padding: 11px 25px;
-
-    font-size: 15px;
 
     opacity: 0;
 
@@ -371,6 +375,48 @@ body {
         aparecer 1.5s ease forwards;
 
     animation-delay: 4s;
+}
+
+
+/* =========================
+   BOTÓN CONFETI Y MÚSICA
+========================= */
+
+#btnConfeti,
+#btnMusica {
+    padding: 11px 22px;
+
+    font-size: 15px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   REPRODUCTOR DE YOUTUBE
+   OCULTO VISUALMENTE
+========================= */
+
+.youtube-container {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+
+    opacity: 0.01;
+
+    pointer-events: none;
+}
+
+
+#youtube-player {
+    width: 1px;
+    height: 1px;
 }
 
 
@@ -542,8 +588,18 @@ body {
     }
 
 
-    #btnConfeti {
+    .botones {
+        gap: 8px;
+
         margin-top: 20px;
+    }
+
+
+    #btnConfeti,
+    #btnMusica {
+        padding: 10px 16px;
+
+        font-size: 14px;
     }
 
 }

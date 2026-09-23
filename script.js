@@ -5,6 +5,16 @@ const contenido = document.getElementById("contenido");
 const btnConfeti = document.getElementById("btnConfeti");
 const confetiContainer = document.getElementById("confeti-container");
 
+const btnMusica = document.getElementById("btnMusica");
+
+
+// ==========================================
+// VARIABLES DE YOUTUBE
+// ==========================================
+
+let player = null;
+let reproduciendo = false;
+
 
 // ==========================================
 // BOTÓN INICIAL
@@ -36,7 +46,6 @@ btnConfeti.addEventListener("click", () => {
 
 function lanzarConfeti() {
 
-    // Colores relacionados con los tulipanes
     const colores = [
         "#f5cf45",
         "#ffe76b",
@@ -47,7 +56,6 @@ function lanzarConfeti() {
     ];
 
 
-    // Cantidad de confetis
     const cantidad = 120;
 
 
@@ -117,3 +125,131 @@ function lanzarConfeti() {
     }
 
 }
+
+
+// ==========================================
+// YOUTUBE
+// ==========================================
+
+function onYouTubeIframeAPIReady() {
+
+    player = new YT.Player("youtube-player", {
+
+        width: "320",
+        height: "180",
+
+        // Acércame a Ti - instrumental
+        videoId: "rYbhlNaSSSM",
+
+        playerVars: {
+
+            controls: 0,
+            rel: 0,
+            playsinline: 1
+
+        },
+
+        events: {
+
+            onReady: function () {
+
+                console.log("YouTube listo.");
+
+            },
+
+
+            onStateChange: function (event) {
+
+                // REPRODUCIENDO
+                if (event.data === YT.PlayerState.PLAYING) {
+
+                    reproduciendo = true;
+
+                    btnMusica.innerHTML =
+                        "❚❚ Pausar";
+
+                }
+
+
+                // PAUSADO
+                else if (event.data === YT.PlayerState.PAUSED) {
+
+                    reproduciendo = false;
+
+                    btnMusica.innerHTML =
+                        "♫ Reproducir";
+
+                }
+
+
+                // TERMINÓ LA CANCIÓN
+                else if (event.data === YT.PlayerState.ENDED) {
+
+                    reproduciendo = false;
+
+                    btnMusica.innerHTML =
+                        "♫ Reproducir";
+
+                }
+
+            },
+
+
+            onError: function (event) {
+
+                console.error(
+                    "Error de YouTube:",
+                    event.data
+                );
+
+                reproduciendo = false;
+
+                btnMusica.innerHTML =
+                    "♫ Reproducir";
+
+            }
+
+        }
+
+    });
+
+}
+
+
+// ==========================================
+// BOTÓN REPRODUCIR / PAUSAR
+// ==========================================
+
+btnMusica.addEventListener("click", () => {
+
+    // Verificar que YouTube ya cargó
+    if (
+        !player ||
+        typeof player.playVideo !== "function"
+    ) {
+
+        console.log(
+            "El reproductor todavía está cargando..."
+        );
+
+        return;
+
+    }
+
+
+    // REPRODUCIR
+    if (!reproduciendo) {
+
+        player.playVideo();
+
+    }
+
+
+    // PAUSAR
+    else {
+
+        player.pauseVideo();
+
+    }
+
+});
